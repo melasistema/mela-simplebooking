@@ -1,0 +1,280 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+@keyframes slide-up {
+    from { bottom: -300px; }
+    to { bottom: 0px; }
+}
+
+@keyframes slide-up-two {
+    from { bottom: 0px; }
+    to { bottom: 188px; }
+}
+
+div#mela-converto-wrapper {
+    padding: 15px;
+    border-radius: 2%;
+}
+
+div#sb-wrapper {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 11;
+    transition: all .8s ease;
+}
+
+/* @media only screen and (min-width: 1215px) { */
+    div#sb-wrapper.hide {
+        bottom: -115px;
+    }
+/* } */
+
+#sb-container {
+    position: relative;
+}
+
+.sb__btn.sb__btn--block.sb__btn--verify.sb-custom-button-color.sb-custom-button-bg-color.sb-custom-button-hover-bg-color {
+border-radius: 0px !important;
+-webkit-border-radius: 0px !important;
+-o-border-radius: 0px !important;
+}
+
+.sb-screen-xs .sb__form-field--checkin .sb__form-field-input {
+border-radius: 0px !important;
+}
+
+.sb-screen-xs .sb__form-field--checkout .sb__form-field-input {
+border-radius: 0px !important;
+}
+
+.sb__form-field-input {
+border-radius: 0px !important;
+}
+
+.sb__btn {
+border-radius: 0px !important;
+}
+
+.sb__footer {
+height: 0px;
+}
+
+.sb__footer-actions {
+display: none;
+}
+
+
+.sb-screen-l .sb__form-field-input {
+padding: 16px 16px 16px 16px !important;
+height: 46px;
+}
+
+.sb-screen-l .sb__btn--verify {
+height: 46px;
+padding: 15px 8px 16px 8px;
+}
+
+
+/*.sb-screen-l .sb__form-field-date-number, .sb__calendar-day, .sb__guests-adults-label, .sb__guests-children-label, .sb__calendar-weekdays li, .sb__guests-room-label, .number-of-months-vertical .sb__calendar-month-name, .sb button, .sb input, .sb__form-field-label, .sb__form-field-month-year, .sb__form-field-guests, .sb-screen-l .sb__form-field-weekday, .sb-screen-l .sb__form-field-rooms {
+font-family: 'NewBaskervilleITCPro-Roman', Helvetica, Arial, sans-serif !important;
+}*/
+
+#sb-container_sb__form-field--checkavailability {
+text-transform: uppercase;
+font-style: normal;
+letter-spacing: 1px;
+}
+
+.sb-screen-l .sb__form-field-month-year, .sb-screen-l .sb__form-field-guests {
+font-size: 16px !important;
+}
+
+.sb__form-field-label, .sb-screen-l .sb__form-field-weekday, .sb-screen-l .sb__form-field-rooms {
+font-size: 13px !important;
+letter-spacing: 0.5px !important;
+}
+
+.sb {
+padding: 4px 235px !important;
+max-width: none !important;
+}
+
+.sb__form {
+margin: 0 auto !important;
+max-width: 1600px;
+}
+
+#sb-container {
+animation: 1.2s slide-up;
+animation-timing-function: linear;
+}
+
+.sb-screen-m .sb__dates {
+width: calc( 50% ) !important;
+}
+
+.sb-screen-xs .sb__dates .sb__form-field {
+width: calc( 50% - 11px ) !important;
+}
+
+#rpb {
+    padding: 5px 5px !important;
+}
+
+#sb-button {
+    width: 100%;
+    height: 44px;
+    bottom:0;
+    position: relative;
+    z-index: 99999;
+}
+
+.sb-button-div {
+    /*text-align: center;
+    height: 100%;*/
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sb-button-span {
+    /*color: white;*/
+    line-height: 44px;
+    text-transform: uppercase;
+}
+/*.sb-button-arrow {
+    line-height: 22px !important;
+    font-size: 22px !important;
+    font-family: FontAwesome !important;
+    opacity: 1;
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    overflow: visible;
+    height: 26px;
+    width: 26px;
+    text-align: center;
+}*/
+
+/*.sb-button-arrow::before {
+    content: "\f106";
+    color: #fff;
+    top: -2px;
+    right: -1px;
+    display: block;
+    transition: all 0.35s cubic-bezier(0.12,0.75,0.4,1);
+    -webkit-transition: all 0.35s cubic-bezier(0.12,0.75,0.4,1);
+    position: relative;
+}
+
+.sb-button-arrow::after {
+    display: block;
+    content: ' ';
+    position: absolute;
+    width: 26px;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    left: -6px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.12,0.75,0.4,1);
+    -webkit-transition: all 0.35s cubic-bezier(0.12,0.75,0.4,1);
+    pointer-events: none;
+    top: 11px;
+    transform: translateX(-27px);
+    -webkit-transform: translateX(-27px);
+}*/
+
+#sb-button.collapse {
+    height: 44px;
+    z-index: 0;
+    animation: 1.2s slide-up;
+    animation-timing-function: linear; 
+}
+
+#sb-button.collapse .sb-button-arrow {
+    font-size: 18px !important;
+    top: -2px;
+}
+
+
+
+/*#sb-button.collapse .sb-button-arrow::before {
+    content: "\f107";
+}*/
+
+
+#sb-button.collapse .sb-button-span {
+    display: none;
+}
+
+.sb {
+    padding: 20px !important;
+}
+
+.sb__form-field--checkin {
+    margin-right: 22px;
+}
+
+#sb-container_sb__form-field--checkavailability {
+    width: calc(100%);
+}
+
+
+
+
+@media only screen and (min-width: 1215px) {
+
+    #sb-button {
+        display:none;
+    }
+
+    #sb-container {
+    display: block !important;
+    }
+
+    .sb-screen-m .sb__guests-rooms {
+    width: 24% !important;
+    }
+
+    .sb-screen-l .sb__btn--verify {
+    width: 24% !important;
+    }
+
+    #sb-container_sb__form-field--checkavailability {
+    margin-left: 16px;
+    }
+
+    #sb-container_sb-container_sb__form-field--checkin {
+    margin-right: 22px;
+    }
+
+    #sb-container_sb__form-field--checkin {
+    margin-right: 22px;
+    }
+
+    #sb-container_sb__form {
+    margin-left: 10px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 420px) {
+
+    .sb__form-field-weekday {
+    display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    #sb-button {
+        z-index: 999;
+    }
+}
