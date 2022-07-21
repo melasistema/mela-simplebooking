@@ -60,141 +60,141 @@ class Mela_Simplebooking_Plugin_Config {
             // Simple Booking Settings + extra layout
             'melasimplebooking_ida' => array(
                 'field_type' => 'number',
-                'label' => __('The Simple Numerello', 'mela-simplebooking'),
-                'description' => __('After purchased the SimpleBooking service you\'ll recieve an IDA number for your landing', 'mela-simplebooking'),
+                'label' => __( 'The Simple Numerello', 'mela-simplebooking' ),
+                'description' => __( 'After purchased the SimpleBooking service you\'ll recieve an IDA number for your landing', 'mela-simplebooking' ),
             ),
             'melasimplebooking_language' => array(
                 'field_type' => 'text',
-                'label' => __('Language code', 'mela-simplebooking'),
-                'description' => __('Please use the default language code es.IT', 'mela-simplebooking'),
+                'label' => __( 'Language code', 'mela-simplebooking' ),
+                'description' => __( 'Please use the default language code es.IT', 'mela-simplebooking' ),
             ),
             'melasimplebooking_hideonscroll' => array(
                 'field_type' => 'checkbox',
-                'label' => __('Hide Simplebooking banner when scrolling', 'mela-simplebooking'),
+                'label' => __( 'Hide Simplebooking banner when scrolling', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_disable_banner_pages' => array(
                 'field_type' => 'multiple_select',
-                'label' => __('Hide banner in certain pages', 'mela-simplebooking'),
-                'description' => __('Disable the banner in selected pages', 'mela-simplebooking'),
+                'label' => __( 'Hide banner in certain pages', 'mela-simplebooking' ),
+                'description' => __( 'Disable the banner in selected pages', 'mela-simplebooking' ),
                 'select_options' => $this->all_published_pages,
             ),
             'melasimplebooking_custom_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_background_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_label_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_label_hover_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_widget_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_widget_bg_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_widget_element_hover_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_widget_element_bg_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_box_shadow_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_box_shadow_color_hover' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_box_shadow_color_focus' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_add_room_box_shadow_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_intent_selection_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_intent_selection_days_bg_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_button_bg_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_button_hover_bg_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_icon_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_link_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_accent_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_field_background_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_selected_days_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
             'melasimplebooking_calendar_background_color' => array(
                 'field_type' => 'text',
-                'label' => __('', 'mela-simplebooking'),
+                'label' => __( '', 'mela-simplebooking' ),
                 'description' => '',
             ),
 
             // Plugin Settings
             'melasimplebooking_delete_settings' => array(
                 'field_type' => 'checkbox',
-                'label' => __('Delete Settings', 'mela-simplebooking'),
-                'description' => __('Check this to delete all settings when DEACTIVATE the plugin (..for now, because we need to take care of unistall method)', 'mela-simplebooking'),
+                'label' => __( 'Delete Settings', 'mela-simplebooking' ),
+                'description' => __( 'Check this to delete all settings when DEACTIVATE the plugin (..for now, because we need to take care of unistall method)', 'mela-simplebooking' ),
             ),
             
 
@@ -222,10 +222,10 @@ class Mela_Simplebooking_Plugin_Config {
         }
         
         $args = array(
-            'post_type'        => 'page',
-            'posts_per_page'   => -1,
-            'post_status' => 'publish',
-            'suppress_filters' => false
+            'post_type'         => 'page',
+            'posts_per_page'    => -1,
+            'post_status'       => 'publish',
+            'suppress_filters'  => false
         );
 
         $posts = get_posts( $args );
