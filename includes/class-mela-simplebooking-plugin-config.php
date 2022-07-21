@@ -53,7 +53,7 @@ class Mela_Simplebooking_Plugin_Config {
      */
     public function __construct() {
 
-        $this->$all_published_pages = $this->melasimplebooking_return_pages();
+        $this->all_published_pages = $this->melasimplebooking_return_pages();
 
         $this->plugin_settings = [
 
@@ -77,7 +77,7 @@ class Mela_Simplebooking_Plugin_Config {
                 'field_type' => 'multiple_select',
                 'label' => __('Hide banner in certain pages', 'mela-simplebooking'),
                 'description' => __('Disable the banner in selected pages', 'mela-simplebooking'),
-                'select_options' => $this->$all_published_pages,
+                'select_options' => $this->all_published_pages,
             ),
             'melasimplebooking_custom_color' => array(
                 'field_type' => 'text',
@@ -215,7 +215,7 @@ class Mela_Simplebooking_Plugin_Config {
 
         global $sitepress;
 
-        if ( $sitepres ) {
+        if ( $sitepress ) {
             //changes to the default language
             $default_language = $sitepress->get_default_language();
             $sitepress->switch_lang( $default_language );

@@ -1,61 +1,56 @@
-=== Mela simpleBooking.travel integration  ===
+=== simpleBooking - Wordpress Plugin  ===
 Contributors: Ugo Folletti, Riccardo Di Curti
 Donate link: https://lucavisciola.com
 Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 4.3
+Requires at least: 5.5
+Tested up to: 6.0.1
+Stable tag: 6.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Easly integrate mobile friendly simpleBooking reservation form bar and more
+Easly integrate mobile friendly simpleBooking reservation bar and form
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+With Simple Booking, managing all online reservations becomes a pleasure for both operators and guests at your hotel.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+This plugin allows you to add the responsive "Availability Search" bar in one click, customize the colors, disable it on specific pages for example on the reservations page where you can use the simpleBooking form with the shortcode [melasimplebooking-form]
+
+This plugin is fully compatible with WPML and automagically returns you the language that is need it.
+If you use it on a single language website, you can set the language in the plugin settings using the language code es. DE
+
+== Plugin functionality ==
+
+Ordered list:
+
+1. Customizable colors
+2. Auto-hide on scroll
+3. Mobile friendly
+4. Hide availability bar from specific pages
+5. Reservation form shortcode
+
 
 A few notes about the sections above:
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+*   "Contributors" Ugo Folletti, Riccardo Di Curti
+*   "Tags" booking engine, reservation system, travel, hotel, bed & breakfast, simpleBooking
+*   "Requires at least" 5.5
+*   "Tested up to" 6.0.1
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+1. Upload `mela-simplebooking` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Add the IDA number in the settings page of the plugin
+4. Use the shortcode `[mela-simplebooking]` where you need the simpleBooking form
 
-e.g.
-
-1. Upload `mela-simplebooking.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= The plugin is free? How can i use the simpleBooking Booking Engine? =
 
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+This plugin is free and is intendent for work Plug & Play with your wordpress reservation website and is multi-language compatible with WPML plugin out of the box, however it needs an ongoing plan with the booking engine suite `simpleBooking` --> https://www.simplebooking.travel
 
 == Screenshots ==
 

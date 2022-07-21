@@ -8,13 +8,13 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://lucavisciola.com
+ * @link              https://melasimplebooking.melasistema.com
  * @since             1.0.0
  * @package           Mela_Simplebooking
  *
  * @wordpress-plugin
  * Plugin Name:       Mela simpleBooking
- * Plugin URI:        https://melasistema.com
+ * Plugin URI:        https://melasimplebooking.melasistema.com
  * Description:       Setup simpleBooking mobile friendly bar and more
  * Version:           1.0.0
  * Author:            Luca Visciola

@@ -108,7 +108,6 @@ class Mela_Simplebooking_Public {
 	        'melasimplebooking_ida' => $options['melasimplebooking_ida'],
 	        'melasimplebooking_language' => $actual_language,
 	        'melasimplebooking_hideonscroll' => $options['melasimplebooking_hideonscroll'],
-	        'melasimplebooking_mobile_margin_bottom' => $options['melasimplebooking_mobile_margin_bottom'],
 
 	        'melasimplebooking_custom_color' => $options['melasimplebooking_custom_color'],
 	        'melasimplebooking_background_color' => $options['melasimplebooking_background_color'],
