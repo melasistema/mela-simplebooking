@@ -33,8 +33,6 @@ class Mela_Simplebooking_Plugin_Helper_Functions {
 		// That's deprecated i believe, so is better go with apply_filters on te WPML API
 		if( !defined( 'ICL_LANGUAGE_CODE' ) ) {
 
-			write_log( $options['melasimplebooking_language'] );
-
 		    if( empty( $options['melasimplebooking_language'] ) ) {
 	            $lang = 'EN';
 	        } else {

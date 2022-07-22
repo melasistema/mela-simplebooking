@@ -162,30 +162,27 @@ class Mela_Simplebooking_Admin_Options  {
 
 	    			case 'checkbox':?>
 
-	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo ($options[$args['label_for']] == true) ? "checked" : ""; ?>><?php _e($args['melasimplebooking_custom_data']['label'], 'mela-simplebooking'); ?></input>
+	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo (!empty($options[$args['label_for']]) && $options[$args['label_for']] == true) ? "checked" : ""; ?>><?php _e($args['melasimplebooking_custom_data']['label'], 'mela-simplebooking'); ?></input>
 
 	    				<?php break;
 
 	    			case 'multiple_select': ?>
 
-    					<select multiple type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>][]"  value="<?php echo empty($options[$args['label_for']]) ? " " : $options[$args['label_for']]; ?>">
-    						
-    						<option value="" <?php if ( empty( $options[$args['label_for']] ) ) { echo 'selected'; } ?> disabled><?php _e( 'Select one or more options...', 'melasimplebooking' ); ?></option>
+						<select multiple type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>][]"  value="<?php echo !empty( $options[$args['label_for']] ) && !empty( in_array( $args['label_for'], $options[$args['label_for']] ) ) ? $options[$args['label_for']] : ""; ?>">
+				
+							<option value="" <?php empty( $options[$args['label_for']] ) ? "selected" : ""; ?> disabled><?php _e( 'Select one or more options...', 'melasimplebooking' ); ?></option>
 
-    						<?php 
+							<?php if (!empty($select_options)) {
 
-    							if ($select_options) {
+								foreach ($select_options as $key => $value) { ?>
 
-    								foreach ($select_options as $key => $value) { ?>
+									<option value="<?php echo $value; ?>" <?php echo ( in_array($value, $options[$args['label_for']])) ? 'selected' : '' ?>><?php if ($key) { echo $key; } ?></option>
 
-	    								<option value="<?php echo $value; ?>" <?php echo (in_array($value, $options[$args['label_for']])) ? 'selected' : '' ?>><?php echo $key; ?></option>
+								<?php } 
+								
+							} ?>
 
-	    							<?php } 
-    							}
-    							
-    						?>
-
-    					</select>
+						</select>
     			
     				<?php break;
 

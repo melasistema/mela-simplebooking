@@ -34,7 +34,7 @@ class Mela_Simplebooking_Deactivator {
         $option_name = 'melasimplebooking_options';
         $options = get_option( 'melasimplebooking_options' );
         
-        if( $options['melasimplebooking_delete_settings'] == 'on' ) {
+        if( !empty($options['melasimplebooking_delete_settings']) && $options['melasimplebooking_delete_settings'] == true ) {
 
             delete_option( $option_name );
 

@@ -107,8 +107,7 @@ class Mela_Simplebooking_Public {
 		$melasimplebooking_localized_settings = array(
 	        'melasimplebooking_ida' => $options['melasimplebooking_ida'],
 	        'melasimplebooking_language' => $actual_language,
-	        'melasimplebooking_hideonscroll' => $options['melasimplebooking_hideonscroll'],
-
+	        'melasimplebooking_hideonscroll' => (isset($options['melasimplebooking_hideonscroll'])) ? $options['melasimplebooking_hideonscroll'] : "",
 	        'melasimplebooking_custom_color' => $options['melasimplebooking_custom_color'],
 	        'melasimplebooking_background_color' => $options['melasimplebooking_background_color'],
 	        'melasimplebooking_label_color' => $options['melasimplebooking_label_color'],
@@ -138,7 +137,7 @@ class Mela_Simplebooking_Public {
 		wp_localize_script( $this->plugin_name, 'melasimplebooking_settings', $melasimplebooking_localized_settings);
 
 		// Add Hide On Scroll JS if options is set to true  --> on for WP API)
-		if( !empty( $options['melasimplebooking_hideonscroll'] && $options['melasimplebooking_hideonscroll'] == 'on' ) ) {
+		if( isset($options['melasimplebooking_hideonscroll']) && $options['melasimplebooking_hideonscroll'] == true ) {
         
 	        wp_enqueue_script( $this->plugin_name . '_hideonscroll', plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-public-hideonscroll.js', array(), $this->version, true );
 	    }
@@ -159,10 +158,21 @@ class Mela_Simplebooking_Public {
 			global $post;
 	        global $sitepress;
 
-	        if ($sitepress) {
+	        // Hold the disabled pages and take care of NULL disable_banner_pages
+	        if ( !isset( $options['melasimplebooking_disable_banner_pages'] ) ) {
+
+	        	$disable_banner_pages = [];
+
+	        } else {
+
+	        	$disable_banner_pages = $options['melasimplebooking_disable_banner_pages'];
+	        	
+	        }
+
+	        if ( $sitepress ) {
 
 	        	$wpml_default_language = $sitepress->get_default_language();
-	        	$default_lang_page_id = icl_object_id($post->ID, 'page', false, $wpml_default_language);
+	        	$default_lang_page_id = icl_object_id( $post->ID, 'page', false, $wpml_default_language );
 
 	        } else {
 
@@ -172,7 +182,7 @@ class Mela_Simplebooking_Public {
 
 		?>
 
-		<?php if ( !in_array($default_lang_page_id, $options['melasimplebooking_disable_banner_pages']) ) { ?>
+		<?php if ( !in_array( $default_lang_page_id, $disable_banner_pages ) ) { ?>
 
 	        <div id="sb-wrapper">
 	        
@@ -191,8 +201,5 @@ class Mela_Simplebooking_Public {
 	    <?php }
 
 	}
-
-
-	
 
 }
