@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The General Helper Functions fot the /public.
+ * The Shortcodes class /public.
  *
  * @link       https://lucavisciola.com
  * @since      1.0.0
@@ -11,7 +11,7 @@
  */
 
 /**
- * General Helper for the public-facing.
+ * Shortcodes for the public-facing.
  *
  *
  * @package    Mela_Simplebooking
@@ -59,14 +59,14 @@ class Mela_Simplebooking_Public_Shortcodes {
 	*/
     // register shortcode Simplebooking form
     // [melasimplebooking-form]
-    public function melasimplebooking_sb_form_preventivo($atts = '') { 
+    public function melasimplebooking_sb_form_preventivo( $atts = '' ) { 
 
         // Get options for use them on are needs
         $options = get_option( 'melasimplebooking_options' );
 
         // Manage the Simplebooking background_color
         $background_color = '#0b2027';
-        if ( isset($options['melasimplebooking_background_color']) && $options['melasimplebooking_background_color'] != '' ) {
+        if ( isset( $options['melasimplebooking_background_color']) && $options['melasimplebooking_background_color'] != '' ) {
            $background_color = $options['melasimplebooking_background_color'];
         }
         
@@ -93,7 +93,7 @@ class Mela_Simplebooking_Public_Shortcodes {
 
     public function register_melasimplebooking_shortcodes() {
 
-      add_shortcode('melasimplebooking-form', array( $this, 'melasimplebooking_sb_form_preventivo')); 
+      add_shortcode( 'melasimplebooking-form', array( $this, 'melasimplebooking_sb_form_preventivo' ) ); 
 
     }
 
