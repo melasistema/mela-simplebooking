@@ -166,9 +166,10 @@ class Mela_Simplebooking_Public {
 	        } else {
 
 	        	$disable_banner_pages = $options['melasimplebooking_disable_banner_pages'];
-	        	
+
 	        }
 
+	        // Check if WPML
 	        if ( $sitepress ) {
 
 	        	$wpml_default_language = $sitepress->get_default_language();
@@ -182,19 +183,20 @@ class Mela_Simplebooking_Public {
 
 		?>
 
+		<!-- If this page it's not disabled - add the HTML markup for the simpleBooking availability  -->
 		<?php if ( !in_array( $default_lang_page_id, $disable_banner_pages ) ) { ?>
 
 	        <div id="sb-wrapper">
-	        
+	        	
+	        	<!-- Mobile bar toggler -->
 	            <div id="sb-button">
 	                <div class="sb-button-div">
 	                    <span id="melasimplebooking-automatic-text" class="sb-button-span"></span>
 	                    <span id="sb-button-arrow-icon" class="sb-button-arrow dashicons dashicons-arrow-down-alt2"></span>
 	                </div>    
 	            </div>
-
-	            <div id="sb-container" style="display:none;">
-	            </div>
+	            <!-- simpleBooking form container -->
+	            <div id="sb-container"></div>
 
 	        </div>  
 

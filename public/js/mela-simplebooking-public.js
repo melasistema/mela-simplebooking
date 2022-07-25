@@ -72,115 +72,111 @@
         });
 
 
+        var id_sb_container = document.getElementById( 'sb-container' );
         var id_sb_button =  document.getElementById( 'sb-button' );
-        // var id_sb_button_arrow = document.getElementById("sb-button-arrow-icon");
-        // jQuery solution --> needs to be nailed in JS
-        var id_sb_button_arrow = jQuery( '.sb-button-arrow' );
-
-        // Take care of the default color mobile toggler
-        // id_sb_button_arrow.style.color = ((melasimplebooking_settings.melasimplebooking_label_color === "") ? melasimplebooking_settings.melasimplebooking_label_color : '#FFF');
-        // jQuery solution --> needs to be nailed in JS
-        if ( id_sb_button_arrow ) { id_sb_button_arrow.css( 'color', '#FFF' ) }
-    
-        if ( id_sb_button ) { id_sb_button.style.backgroundColor = (melasimplebooking_settings.melasimplebooking_background_color ? melasimplebooking_settings.melasimplebooking_background_color : '#0b2027') }
+        var id_sb_button_arrow = document.getElementById("sb-button-arrow-icon");
+        // Set the toogle arrow in UP position
+        id_sb_button_arrow.classList.add( "up-position" );
 
         if ( typeof( id_sb_button ) != 'undefined' && id_sb_button != null ) {
+
+            // Take care of the default color mobile toggler
+            if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = '#FFF' }
+
+            // if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = ( melasimplebooking_settings.melasimplebooking_label_color ? melasimplebooking_settings.melasimplebooking_label_color : '#FFF' ) }
+
+            if ( id_sb_button ) { id_sb_button.style.backgroundColor = ( melasimplebooking_settings.melasimplebooking_background_color ? melasimplebooking_settings.melasimplebooking_background_color : '#0b2027' ) }
+
+
+            if ( screen.width > '1214' ) {
+
+                id_sb_container.classList.add( "slidedown" );
+                id_sb_container.classList.add( "slideup" );
+                id_sb_button_arrow.classList.remove( "up-position" );
+                id_sb_button_arrow.classList.add( "down-position" );
+
+            } else {
+
+                id_sb_container.classList.remove( "slideup" );
+                id_sb_container.classList.add( "slidedown" );
+                id_sb_button_arrow.classList.remove( "down-position" );
+                id_sb_button_arrow.classList.add( "up-positionn" );
+
+            }
           
             id_sb_button.onclick = function(){
-           
-                var class_sb = document.getElementsByClassName( 'sb' ); 
-                // console.log(class_sb.length);
-                // console.log(class_sb[0]);
-                class_sb[0].classList.add( 'sb-screen-xs' );
-               
-                var id_sb_container = document.getElementById( 'sb-container' );
-                
-                if ( id_sb_container.style.display == 'none' ){
-                    
-                    id_sb_button.classList.add( 'collapse' ); 
-  
-                    id_sb_button.style.display = '';
-                    id_sb_container.style.display = 'block';
-                    
+
+                if ( id_sb_container.classList.contains( "slideup" )  ) {
+
+                    id_sb_container.classList.remove( "slideup" );
+                    id_sb_container.classList.add( "slidedown" );
+
+                    id_sb_button_arrow.classList.remove( "down-position" );
+                    id_sb_button_arrow.classList.add( "up-position" );
+
                 } else {
-                    
-                    id_sb_button.classList.remove( 'collapse' );
-                    
-                    id_sb_button.style.display = '';
-                    id_sb_container.style.display = 'none';
-                    
+
+                    id_sb_container.classList.remove( "slidedown" );
+                    id_sb_container.classList.add( "slideup" );
+
+                    id_sb_button_arrow.classList.remove( "up-position" );
+                    id_sb_button_arrow.classList.add( "down-position" );
                 }
+
+            }
+
+            /**
+             * 
+             *  Clone the simpleBooking button text on the mobile toggle (so it's the right one for all languages)
+             *  It's done with a Timeout function so we make it sure that the simpleBoooking iFrame is loaded
+             * 
+             * */
+           
+            setTimeout(function(){
+
+                var form = document.getElementById( "sb-container_sb__form" );
+                var id_sb_button_text = document.getElementById( "melasimplebooking-automatic-text") ;
+                var get_button_text = form.getElementsByClassName( "sb__btn--verify" )[0].value;
+                var mobile_button_text = 'Check Availability';
+
+                if ( id_sb_button_text ) { 
+                    id_sb_button_text.style.color = '#FFF'; 
+                }
+                   
+                if( get_button_text ) {
+
+                    mobile_button_text = get_button_text;
+
+                    var automatic_text =  document.getElementById( 'melasimplebooking-automatic-text' );
+                    if ( typeof( automatic_text ) != 'undefined' && automatic_text != null ) {
+
+                        automatic_text.innerHTML = mobile_button_text;
+
+                    }
+                }
+
+            }, 500);
+
+        }
+
+    }, false);
+
+    // Check on resize event to keep the container Up if resize windowsin browser or landscape big iPad
+    window.addEventListener( 'resize', ( event ) => {
+
+        if ( screen.width > '1214' ) {
+
+            if ( document.getElementById( 'sb-container' ).classList.contains( "slidedown" ) ) {
+                document.getElementById( 'sb-container' ).classList.remove( "slidedown" );
+                document.getElementById( 'sb-container' ).classList.add( "slideup" );
             }
 
         }
 
-
-
-
-    }, false);
+    });
     
-    // document.addEventListener('DOMContentLoaded', function() {
 
-    //     var id_sb_button =  document.getElementById("sb-button");
-
-    //     // Take care of the default color mobile toggler
-    //     id_sb_button.style.color = "#FFF";
-    //     // id_sb_button.style.backgroundColor = "#0b2027"; // default SimpleBooking black background color
-
-    //     id_sb_button.style.backgroundColor = (melasimplebooking_settings.melasimplebooking_background_color ? melasimplebooking_settings.melasimplebooking_background_color : '#0b2027');
-    //     id_sb_button.style.backgroundColor = '#0b2027';
-
-    //     if (typeof(id_sb_button) != 'undefined' && id_sb_button != null) {
-          
-    //         id_sb_button.onclick = function(){
-           
-    //             var class_sb = document.getElementsByClassName("sb"); 
-    //             // console.log(class_sb.length);
-    //             // console.log(class_sb[0]);
-    //             class_sb[0].classList.add("sb-screen-xs");
-               
-    //             var id_sb_container = document.getElementById("sb-container");
-                
-    //             if (id_sb_container.style.display=="none"){
-                    
-    //                 id_sb_button.classList.add("collapse"); 
-  
-    //                 id_sb_button.style.display = "";
-    //                 id_sb_container.style.display = "block";
-                    
-    //             } else {
-                    
-    //                 id_sb_button.classList.remove("collapse");
-                    
-    //                 id_sb_button.style.display = "";
-    //                 id_sb_container.style.display = "none";
-                    
-    //             }
-    //         }
-
-    //     }
-
-        
-       
-    // }, false);
-
-    /* Get the SimpleBooking button text for the mobile */
-    // setTimeout(function(){
-    //     var get_button_text = jQuery('#sb-container_sb__form-field--checkavailability').val();
-    //     if(get_button_text) {
-    //         mobile_button_text = get_button_text;
-    //     } else {
-    //         mobile_button_text = 'Check Availability';
-    //     }
-
-
-    //     var automatic_text =  document.getElementById('melasimplebooking-automatic-text');
-    //     if (typeof(automatic_text) != 'undefined' && automatic_text != null) {
-    //         automatic_text.innerHTML = mobile_button_text;
-    //     }
-
-        
-    // }, 300);
+    
 
 
 

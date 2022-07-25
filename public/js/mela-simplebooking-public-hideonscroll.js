@@ -66,7 +66,7 @@
 
     var toggleHeader = function(direction, curScroll) {
 
-      if (typeof(header) != 'undefined' && header != null) {
+      if (typeof(header) != 'undefined' && header != null && window.innerWidth > '1214') {
         if (direction === 2 && curScroll > 150) { //replace with the height of your header in px
 
           header.classList.add('hide');
