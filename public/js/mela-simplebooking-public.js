@@ -75,15 +75,17 @@
         var id_sb_container = document.getElementById( 'sb-container' );
         var id_sb_button =  document.getElementById( 'sb-button' );
         var id_sb_button_arrow = document.getElementById("sb-button-arrow-icon");
+
         // Set the toogle arrow in UP position
         id_sb_button_arrow.classList.add( "up-position" );
 
         if ( typeof( id_sb_button ) != 'undefined' && id_sb_button != null ) {
 
             // Take care of the default color mobile toggler
-            if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = '#FFF' }
+            //if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = '#FFF' }
+            // console.log(id_sb_button_arrow.style.color);
 
-            // if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = ( melasimplebooking_settings.melasimplebooking_label_color ? melasimplebooking_settings.melasimplebooking_label_color : '#FFF' ) }
+            if ( id_sb_button_arrow ) { id_sb_button_arrow.style.color = ( melasimplebooking_settings.melasimplebooking_label_color ? melasimplebooking_settings.melasimplebooking_label_color : '#FFF' ) }
 
             if ( id_sb_button ) { id_sb_button.style.backgroundColor = ( melasimplebooking_settings.melasimplebooking_background_color ? melasimplebooking_settings.melasimplebooking_background_color : '#0b2027' ) }
 
@@ -140,7 +142,7 @@
                 var mobile_button_text = 'Check Availability';
 
                 if ( id_sb_button_text ) { 
-                    id_sb_button_text.style.color = '#FFF'; 
+                    id_sb_button_text.style.color = ( melasimplebooking_settings.melasimplebooking_label_color ? melasimplebooking_settings.melasimplebooking_label_color : '#FFF' ); 
                 }
                    
                 if( get_button_text ) {
@@ -155,7 +157,7 @@
                     }
                 }
 
-            }, 500);
+            }, 600);
 
         }
 
@@ -164,16 +166,28 @@
     // Check on resize event to keep the container Up if resize windowsin browser or landscape big iPad
     window.addEventListener( 'resize', ( event ) => {
 
-        if ( screen.width > '1214' ) {
+        var sb_container = document.getElementById( 'sb-container' );
+        var sb_wrapper = document.getElementById( 'sb-wrapper' );
 
-            if ( document.getElementById( 'sb-container' ).classList.contains( "slidedown" ) ) {
-                document.getElementById( 'sb-container' ).classList.remove( "slidedown" );
-                document.getElementById( 'sb-container' ).classList.add( "slideup" );
+        if ( window.innerWidth > '1214' ) {
+
+            if ( sb_container.classList.contains( "slidedown" ) ) {
+
+                sb_container.classList.remove( "slidedown" );
+                sb_container.classList.add( "slideup" );
+
             }
 
+        } else if ( window.innerWidth < '1214') {
+
+            if ( sb_wrapper.classList.contains( "hide" ) ) {
+            
+                sb_wrapper.classList.remove('hide');
+
+            }            
         }
 
-    });
+    }, false);
     
 
     

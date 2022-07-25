@@ -119,7 +119,6 @@ font-family: 'NewBaskervilleITCPro-Roman', Helvetica, Arial, sans-serif !importa
 
 .slideup, .slidedown {
     max-height: 0;            
-    overflow-y: hidden;
     -webkit-transition: max-height 0.5s ease-in-out;
     -moz-transition: max-height 0.5s ease-in-out;
     -o-transition: max-height 0.5s ease-in-out;
@@ -252,6 +251,6 @@ font-family: 'NewBaskervilleITCPro-Roman', Helvetica, Arial, sans-serif !importa
 
 @media only screen and (max-width: 1000px){
     #sb-button {
-        z-index: 999;
+        z-index: 1;
     }
 }
