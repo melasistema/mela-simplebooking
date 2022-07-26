@@ -83,12 +83,15 @@ class Mela_Simplebooking_Admin {
 
 	    } else {
 
+	    	// Bootstrap 4.6.2
+	    	wp_enqueue_style( $this->plugin_name . '_bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/css/bootstrap.min.css', array(), $this->version, 'all' );
+	    	// Bootstrap select 1.13.14
+	    	wp_enqueue_style( $this->plugin_name . '_bootstrap_select', plugin_dir_url( __FILE__ ) . 'vendor/css/bootstrap-select.min.css', array(), $this->version, 'all' );
+	    	// Color picker WP API
 	    	wp_enqueue_style( 'wp-color-picker' );
-
+	    	// My style
 	        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mela-simplebooking-admin.css', array(), $this->version, 'all' );
 	    }
-
-		
 
 	}
 
@@ -111,9 +114,7 @@ class Mela_Simplebooking_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-admin.js', array( 'jquery' ), $this->version, false );
-
-		// Load this JS (for now) only on the Melasimplebooking top level page
+		// Load JS (for now) only on the Melasimplebooking top level page
 		// to avoid JS to compromise other things!
 		$current_screen = get_current_screen();
 		if ( strpos( $current_screen->base, 'toplevel_page_melasimplebooking' ) === false ) {
@@ -122,9 +123,15 @@ class Mela_Simplebooking_Admin {
 
 	    } else {
 
-		    wp_enqueue_script( $this->plugin_name . '_colorpicker', plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-color-picker.js', array( 'wp-color-picker' ), $this->version, true );
-			    }
-
+	    	// Popper 2.11.5
+			wp_enqueue_script( $this->plugin_name . '_popper', plugin_dir_url( __FILE__ ) . 'vendor/js/popper.min.js', array(), $this->version, true );
+			// Bootstrap 4.6.2
+			wp_enqueue_script( $this->plugin_name . '_bootstrap', plugin_dir_url( __FILE__ ) . 'vendor/js/bootstrap.min.js', array(), $this->version, true );
+			// Bootstrap select 1.13.14 
+			wp_enqueue_script( $this->plugin_name . '_bootstrap_select', plugin_dir_url( __FILE__ ) . 'vendor/js/bootstrap-select.min.js', array( 'jquery' ), $this->version, true );
+			// My Script
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-admin.js', array('wp-color-picker', 'jquery'), $this->version, true );
+		}
 	}
 
 	/**

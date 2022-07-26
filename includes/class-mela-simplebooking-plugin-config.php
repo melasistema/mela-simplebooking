@@ -81,7 +81,7 @@ class Mela_Simplebooking_Plugin_Config {
             ),
             'melasimplebooking_disable_banner_pages' => array(
                 'field_type' => 'multiple_select',
-                'class' => '',
+                'class' => 'selectpicker',
                 'section' => 'plugin_settings',
                 'label' => __( 'Hide banner in certain pages', 'mela-simplebooking' ),
                 'description' => __( 'Disable the banner in selected pages', 'mela-simplebooking' ),

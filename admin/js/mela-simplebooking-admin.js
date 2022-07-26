@@ -29,4 +29,14 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	 // init Selectpicker Bootstrap in backend
+	 $(document).ready(function(){
+
+	 	// init Bootatrap Select Picker
+	 	$('.selectpicker').selectpicker('refresh')
+	 	// Init WP Color Picker
+	 	$('.color-field').wpColorPicker();
+
+	 });
+
 })( jQuery );
