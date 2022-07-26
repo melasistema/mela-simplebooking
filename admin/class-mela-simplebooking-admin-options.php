@@ -83,13 +83,13 @@ class Mela_Simplebooking_Admin_Options  {
 
 	    add_settings_section(
 	        'melasimplebooking_section_plugin_settings',
-	        __( 'Setup Mela SimpleBooking plugin settings.', 'mela-simplebooking' ), 
+	        __( '', 'mela-simplebooking' ), 
 	        array( $this,'melasimplebooking_section_plugin_settings_callback' ),
 	        'melasimplebooking'
 	    );
 	    add_settings_section(
 	        'melasimplebooking_section_style_settings',
-	        __( 'Setup SimpleBooking bar and form style settings.', 'mela-simplebooking' ), 
+	        __( '', 'mela-simplebooking' ), 
 	        array( $this,'melasimplebooking_section_style_settings_callback' ),
 	        'melasimplebooking'
 	    );
@@ -111,6 +111,7 @@ class Mela_Simplebooking_Admin_Options  {
 		            'class'             => 'melasimplebooking_row',
 		            'melasimplebooking_custom_data' => array(
 		            	'field_type' => empty( $value['field_type'] ) ? "" : $value['field_type'],
+		            	'class' => empty( $value['class'] ) ? "" : $value['class'],
 		            	'label' => empty( $value['label'] ) ? "" : $value['label'],
 		            	'description' => empty( $value['description'] ) ? "" : $value['description'],
 		            	'select_options' => empty( $value['select_options'] ) ? "" : $value['select_options'],
@@ -164,7 +165,13 @@ class Mela_Simplebooking_Admin_Options  {
 	    			case 'text': 
 	    			case 'number':?>
 
-	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]"  value="<?php echo empty($options[$args['label_for']]) ? " " : $options[$args['label_for']]; ?>">
+	    			<?php 
+
+	    				write_log($args['melasimplebooking_custom_data']['class']);
+
+	    			?>
+
+	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty($args['melasimplebooking_custom_data']['class']) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]"  value="<?php echo empty($options[$args['label_for']]) ? " " : $options[$args['label_for']]; ?>">
 
 	    				<?php break;
 

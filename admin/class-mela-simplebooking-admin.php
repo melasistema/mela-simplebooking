@@ -83,6 +83,8 @@ class Mela_Simplebooking_Admin {
 
 	    } else {
 
+	    	wp_enqueue_style( 'wp-color-picker' );
+
 	        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mela-simplebooking-admin.css', array(), $this->version, 'all' );
 	    }
 
@@ -110,6 +112,18 @@ class Mela_Simplebooking_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-admin.js', array( 'jquery' ), $this->version, false );
+
+		// Load this JS (for now) only on the Melasimplebooking top level page
+		// to avoid JS to compromise other things!
+		$current_screen = get_current_screen();
+		if ( strpos( $current_screen->base, 'toplevel_page_melasimplebooking' ) === false ) {
+
+	        return;
+
+	    } else {
+
+		    wp_enqueue_script( $this->plugin_name . '_colorpicker', plugin_dir_url( __FILE__ ) . 'js/mela-simplebooking-color-picker.js', array( 'wp-color-picker' ), $this->version, true );
+			    }
 
 	}
 
