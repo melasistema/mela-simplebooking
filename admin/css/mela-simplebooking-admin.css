@@ -1,4 +1,26 @@
 /**
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
- */
+**/
+.melasimplebooking_settings_section_wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    /* The background image is loaded from php */
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 35px;
+}
+
+@media only screen and ( min-width: 1024px ) { 
+
+    .melasimplebooking-spacer {
+        height: 130px;
+    }
+
+} 
+
+/* Give some air to default sections */
+table.form-table {
+    margin-bottom: 70px;
+}

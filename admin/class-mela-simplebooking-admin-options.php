@@ -80,16 +80,23 @@ class Mela_Simplebooking_Admin_Options  {
 
 		// Register a new setting for "melasimplebooking" page.
 	    register_setting( 'melasimplebooking', 'melasimplebooking_options' );
-	    
-		// Register a new section in the "melasimplebooking" page.
+
 	    add_settings_section(
-	        'melasimplebooking_section_main_options',
-	        __( 'Setup simple booking details, styles and more.', 'mela-simplebooking' ), 
-	        array( $this,'melasimplebooking_section_main_options_callback' ),
+	        'melasimplebooking_section_plugin_settings',
+	        __( 'Setup Mela SimpleBooking plugin settings.', 'mela-simplebooking' ), 
+	        array( $this,'melasimplebooking_section_plugin_settings_callback' ),
+	        'melasimplebooking'
+	    );
+	    add_settings_section(
+	        'melasimplebooking_section_style_settings',
+	        __( 'Setup SimpleBooking bar and form style settings.', 'mela-simplebooking' ), 
+	        array( $this,'melasimplebooking_section_style_settings_callback' ),
 	        'melasimplebooking'
 	    );
 
 	    foreach($this->plugin_settings as $setting => $value) {
+
+	    	$section = 'melasimplebooking_section_' . $value['section'];
 
 		    add_settings_field(
 		    	
@@ -97,7 +104,8 @@ class Mela_Simplebooking_Admin_Options  {
 		    	__( $setting, 'mela-simplebooking' ),
 		    	array( $this, 'melasimplebooking_render_fields' ),
 		    	'melasimplebooking',
-		    	'melasimplebooking_section_main_options',
+		    	// 'melasimplebooking_section_main_options',
+		    	$section,
 		    	array(
 		    		'label_for'         => $setting,
 		            'class'             => 'melasimplebooking_row',
@@ -208,11 +216,21 @@ class Mela_Simplebooking_Admin_Options  {
 	 *
 	 * @param array $args  The settings array, defining title, id, callback.
 	 */
-	function melasimplebooking_section_main_options_callback( $args ) {
-	    ?>
-	    <p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'At the moment all options are in this section with no structure', 'mela-simplebooking' ); ?></p>
-	    <?php
-	}
+	function melasimplebooking_section_plugin_settings_callback( $args ) { ?>
+
+	    <div class="melasimplebooking_settings_section_wrapper" style="background-image: url(<?php echo plugin_dir_url( __FILE__ ) . 'images/melasimplebooking-plugin-settings-header.png'; ?>);">
+			<div class="melasimplebooking-spacer"></div>
+		</div>
+
+	<?php }
+
+	function melasimplebooking_section_style_settings_callback( $args ) { ?>
+
+		<div class="melasimplebooking_settings_section_wrapper" style="background-image: url(<?php echo plugin_dir_url( __FILE__ ) . 'images/melasimplebooking-style-settings-header.png'; ?>);">
+			<div class="melasimplebooking-spacer"></div>
+		</div>
+
+	<?php }
 	  
 	/**
 	 * Top level menu callback function

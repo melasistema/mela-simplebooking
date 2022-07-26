@@ -72,7 +72,21 @@ class Mela_Simplebooking_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mela-simplebooking-admin.css', array(), $this->version, 'all' );
+
+		// Load this css (for now) only on the Melasimplebooking top level page
+		// to avoid css to compromise other things!
+		$current_screen = get_current_screen();
+
+	    if ( strpos( $current_screen->base, 'toplevel_page_melasimplebooking' ) === false ) {
+
+	        return;
+
+	    } else {
+
+	        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mela-simplebooking-admin.css', array(), $this->version, 'all' );
+	    }
+
+		
 
 	}
 
