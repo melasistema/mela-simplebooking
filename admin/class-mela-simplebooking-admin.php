@@ -154,7 +154,7 @@ class Mela_Simplebooking_Admin {
 		} ?>
 
 		<div id="shortcode-error-melasimplebooking" class="notice notice-warning settings-error is-dismissible"> 
-            <p><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('The Simplebooking form shortcode is avaiable in this version of the plugin. Use this shortcode in your contact page for example: ', 'mela-simplebooking'); ?><strong>[melasimplebooking-form]</strong></span>
+            <p><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('The Simplebooking form shortcode is avaiable in this version of the plugin. Use this shortcode in a page or post: ', 'mela-simplebooking'); ?><strong>[melasimplebooking-form]</strong></span>
         </div>
 	<?php }
 

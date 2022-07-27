@@ -13,8 +13,8 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * Defines the plugin name, version and settings
+ * register and render plugin settings page
  *
  * @package    Mela_Simplebooking
  * @subpackage Mela_Simplebooking/admin
@@ -50,21 +50,31 @@ class Mela_Simplebooking_Admin_Options  {
 	protected $plugin_settings;
 
 	/**
+	 * The languages.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      array   $languages    The plugin languages.
+	 */
+	protected $languages;
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since 	   1.0.0
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 * @param      array     $plugin_settings    All plugin settings.
-	 */
+	 * @param      array     $languages    All plugin languages.
+	 **/
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
+		// Call the Config Class
 		$plugin_options = new Mela_Simplebooking_Plugin_Config();
 		$this->plugin_settings = $plugin_options->load_plugin_settings();
-
+		$this->languages = $plugin_options->load_plugin_languages();
 
 	}
 
@@ -104,17 +114,16 @@ class Mela_Simplebooking_Admin_Options  {
 		    	__( $setting, 'mela-simplebooking' ),
 		    	array( $this, 'melasimplebooking_render_fields' ),
 		    	'melasimplebooking',
-		    	// 'melasimplebooking_section_main_options',
 		    	$section,
 		    	array(
 		    		'label_for'         => $setting,
 		            'class'             => 'melasimplebooking_row',
 		            'melasimplebooking_custom_data' => array(
-		            	'field_type' => empty( $value['field_type'] ) ? "" : $value['field_type'],
-		            	'class' => empty( $value['class'] ) ? "" : $value['class'],
-		            	'label' => empty( $value['label'] ) ? "" : $value['label'],
-		            	'description' => empty( $value['description'] ) ? "" : $value['description'],
-		            	'select_options' => empty( $value['select_options'] ) ? "" : $value['select_options'],
+		            	'field_type' => !empty( $value['field_type'] ) ? $value['field_type'] : "",
+		            	'class' => !empty( $value['class'] ) ? $value['class'] : "",
+		            	'label' => !empty( $value['label'] ) ? $value['label'] : "",
+		            	'description' => !empty( $value['description'] ) ? $value['description'] : "",
+		            	'select_options' => !empty( $value['select_options'] ) ? $value['select_options'] : "",
 		            ),
 		    	)
 		    );
@@ -156,57 +165,76 @@ class Mela_Simplebooking_Admin_Options  {
 	    // Get options for populating selects
 	    $select_options = $args['melasimplebooking_custom_data']['select_options'];
 
-	    ?>
+		switch ($args['melasimplebooking_custom_data']['field_type']) {
 
-	    	<?php 
+			case 'text': 
+			case 'number':?>
 
-	    		switch ($args['melasimplebooking_custom_data']['field_type']) {
+				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]"  value="<?php echo empty( $options[$args['label_for']] ) ? " " : $options[$args['label_for']]; ?>">
 
-	    			case 'text': 
-	    			case 'number':?>
+				<?php break;
 
-	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]"  value="<?php echo empty( $options[$args['label_for']] ) ? " " : $options[$args['label_for']]; ?>">
+			case 'checkbox':?>
 
-	    				<?php break;
+				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo ( !empty( $options[$args['label_for']] ) && $options[$args['label_for']] == true) ? "checked" : ""; ?>><?php _e( $args['melasimplebooking_custom_data']['label'], 'mela-simplebooking' ); ?></input>
 
-	    			case 'checkbox':?>
+				<?php break;
 
-	    				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo ( !empty( $options[$args['label_for']] ) && $options[$args['label_for']] == true) ? "checked" : ""; ?>><?php _e( $args['melasimplebooking_custom_data']['label'], 'mela-simplebooking' ); ?></input>
+			case 'multiple_select': ?>
 
-	    				<?php break;
+				<select multiple type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>][]">
+		
+					<option value="" <?php empty( $options[$args['label_for']] ) ? "selected" : ""; ?> disabled><?php _e( 'Select one or more options...', 'melasimplebooking' ); ?></option>
 
-	    			case 'multiple_select': ?>
+					<?php if (!empty($select_options)) {
 
-						<select multiple type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>][]"  value="<?php echo !empty( $options[$args['label_for']] ) && !empty( in_array( $args['label_for'], $options[$args['label_for']] ) ) ? $options[$args['label_for']] : ""; ?>">
-				
-							<option value="" <?php empty( $options[$args['label_for']] ) ? "selected" : ""; ?> disabled><?php _e( 'Select one or more options...', 'melasimplebooking' ); ?></option>
+						foreach ($select_options as $key => $value) { ?>
 
-							<?php if (!empty($select_options)) {
+							<option value="<?php echo $value; ?>" <?php echo ( in_array( $value, $options[$args['label_for']] ) ) ? 'selected' : '' ?>><?php if ( $key ) { echo $key; } ?></option>
 
-								foreach ($select_options as $key => $value) { ?>
+						<?php } 
+						
+					} ?>
 
-									<option value="<?php echo $value; ?>" <?php echo ( in_array( $value, $options[$args['label_for']] ) ) ? 'selected' : '' ?>><?php if ( $key ) { echo $key; } ?></option>
+				</select>
+		
+			<?php break;
 
-								<?php } 
-								
-							} ?>
+			case 'select': ?>
 
-						</select>
-    			
-    				<?php break;
+				<select type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]">
+		
+					<option value="" <?php empty( $options[$args['label_for']] ) ? "selected" : ""; ?> disabled><?php _e( 'Select one or more options...', 'melasimplebooking' ); ?></option>
 
-	    			default:
-	    				// code...
-	    				break;
-	    		}
+					<?php if ( !empty( $this->languages ) ) {
 
-	    	?>
+						foreach ( $this->languages as $key => $value ) {
 
-		    <p class="description">
-		        <?php esc_html_e( esc_attr( $args['melasimplebooking_custom_data']['description'] ), 'mela-simplebooking' ); ?>
-		    </p>
-	    <?php
-	}
+							// Remove some of the language codes not supported from simpleBooking
+							if ( !strpos($value, "-" ) ) { ?>
+
+								<option value="<?php echo $value; ?>" <?php echo ( $value == $options[$args['label_for']] ) ? 'selected' : '' ?>><?php echo $key; ?></option>
+							
+							<?php }
+						} 
+						
+					} ?>
+
+				</select>
+		
+			<?php break;
+
+			default:?>
+				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]"  value="<?php echo empty( $options[$args['label_for']] ) ? " " : $options[$args['label_for']]; ?>">
+			<?php break;
+			
+		}?>
+
+	    <p class="description">
+	        <?php esc_html_e( esc_attr( $args['melasimplebooking_custom_data']['description'] ), 'mela-simplebooking' ); ?>
+	    </p>
+
+	 <?php }
 
 	/**
 	 * Custom option and settings:
@@ -243,7 +271,6 @@ class Mela_Simplebooking_Admin_Options  {
 	    }
 	 
 	    // add error/update messages
-	 
 	    // check if the user have submitted the settings
 	    // WordPress will add the "settings-updated" $_GET parameter to the url
 	    if ( isset( $_GET['settings-updated'] ) ) {

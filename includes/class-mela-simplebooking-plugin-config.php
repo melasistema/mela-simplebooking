@@ -36,13 +36,22 @@ class Mela_Simplebooking_Plugin_Config {
     protected $plugin_settings;
 
      /**
-     * The Plugin Settings.
+     * All Published Settings.
      *
      * @since    1.0.0
      * @access   protected
      * @var      array    $all_published_pages    All published pages.
      */
     protected $all_published_pages;
+
+    /**
+     * All language for populate dropdown language.
+     *
+     * @since    1.0.0
+     * @access   protected
+     * @var      array    $all_published_pages    All published pages.
+     */
+    protected $languages;
 
     /**
      * Config the plugin settings.
@@ -63,14 +72,15 @@ class Mela_Simplebooking_Plugin_Config {
                 'class' => '',
                 'section' => 'plugin_settings',
                 'label' => __( 'The Simple Numerello', 'mela-simplebooking' ),
-                'description' => __( 'After purchased the SimpleBooking service you\'ll recieve an IDA number for your landing', 'mela-simplebooking' ),
+                'description' => __( 'Write here your simpleBooking IDA number', 'mela-simplebooking' ),
             ),
             'melasimplebooking_language' => array(
-                'field_type' => 'text',
-                'class' => '',
+                'field_type' => 'select',
+                'class' => 'selectpicker',
                 'section' => 'plugin_settings',
                 'label' => __( 'Language code', 'mela-simplebooking' ),
-                'description' => __( 'Please use the default language code es.IT', 'mela-simplebooking' ),
+                'description' => __( 'Choose the default language for simpleBooking. (Keep in mind that if you use WPML the language switching is automagic)', 'mela-simplebooking' ),
+                'select_options' => $this->languages,
             ),
             'melasimplebooking_hideonscroll' => array(
                 'field_type' => 'checkbox',
@@ -252,6 +262,151 @@ class Mela_Simplebooking_Plugin_Config {
             ),  
 
         ];
+        // count 142
+        $this->languages = [
+            "Afrikaans" => "af",
+            "Albanian - shqip" => "sq",
+            "Amharic - አማርኛ" => "am",
+            "Arabic - العربية" => "ar",
+            "Aragonese - aragonés" => "an",
+            "Armenian - հայերեն" => "hy",
+            "Asturian - asturianu" => "ast",
+            "Azerbaijani - azərbaycan dili" => "az",
+            "Basque - euskara" => "eu",
+            "Belarusian - беларуская" => "be",
+            "Bengali - বাংলা" => "bn",
+            "Bosnian - bosanski" => "bs",
+            "Breton - brezhoneg" => "br",
+            "Bulgarian - български" => "bg",
+            "Catalan - català" => "ca",
+            "Central Kurdish - کوردی (دەستنوسی عەرەبی" => "ckb",
+            "Chinese - 中文" => "zh",
+            "Chinese (Hong Kong - 中文（香港）" => "zh-HK",
+            "Chinese (Simplified - 中文（简体）" => "zh-CN",
+            "Chinese (Traditional - 中文（繁體）" => "zh-TW",
+            "Corsican" => "co",
+            "Croatian - hrvatski" => "hr",
+            "Czech - čeština" => "cs",
+            "Danish - dansk" => "da",
+            "Dutch - Nederlands" => "nl",
+            "English" => "en",
+            "English (Australia" => "en-AU",
+            "English (Canada" => "en-CA",
+            "English (India" => "en-IN",
+            "English (New Zealand" => "en-NZ",
+            "English (South Africa" => "en-ZA",
+            "English (United Kingdom" => "en-GB",
+            "English (United States" => "en-US",
+            "Esperanto - esperanto" => "eo",
+            "Estonian - eesti" => "et",
+            "Faroese - føroyskt" => "fo",
+            "Filipino" => "fil",
+            "Finnish - suomi" => "fi",
+            "French - français" => "fr",
+            "French (Canada - français (Canada" => "fr-CA",
+            "French (France - français (France" => "fr-FR",
+            "French (Switzerland - français (Suisse" => "fr-CH",
+            "Galician - galego" => "gl",
+            "Georgian - ქართული" => "ka",
+            "German - Deutsch" => "de",
+            "German (Austria - Deutsch (Österreich" => "de-AT",
+            "German (Germany - Deutsch (Deutschland" => "de-DE",
+            "German (Liechtenstein - Deutsch (Liechtenstein" => "de-LI",
+            "German (Switzerland - Deutsch (Schweiz" => "de-CH",
+            "Greek - Ελληνικά" => "el",
+            "Guarani" => "gn",
+            "Gujarati - ગુજરાતી" => "gu",
+            "Hausa" => "ha",
+            "Hawaiian - ʻŌlelo Hawaiʻi" => "haw",
+            "Hebrew - עברית" => "he",
+            "Hindi - हिन्दी" => "hi",
+            "Hungarian - magyar" => "hu",
+            "Icelandic - íslenska" => "is",
+            "Indonesian - Indonesia" => "id",
+            "Interlingua" => "ia",
+            "Irish - Gaeilge" => "ga",
+            "Italian - italiano" => "it",
+            "Italian (Italy - italiano (Italia" => "it-IT",
+            "Italian (Switzerland - italiano (Svizzera" => "it-CH",
+            "Japanese - 日本語" => "ja",
+            "Kannada - ಕನ್ನಡ" => "kn",
+            "Kazakh - қазақ тілі" => "kk",
+            "Khmer - ខ្មែរ" => "km",
+            "Korean - 한국어" => "ko",
+            "Kurdish - Kurdî" => "ku",
+            "Kyrgyz - кыргызча" => "ky",
+            "Lao - ລາວ" => "lo",
+            "Latin" => "la",
+            "Latvian - latviešu" => "lv",
+            "Lingala - lingála" => "ln",
+            "Lithuanian - lietuvių" => "lt",
+            "Macedonian - македонски" => "mk",
+            "Malay - Bahasa Melayu" => "ms",
+            "Malayalam - മലയാളം" => "ml",
+            "Maltese - Malti" => "mt",
+            "Marathi - मराठी" => "mr",
+            "Mongolian - монгол" => "mn",
+            "Nepali - नेपाली" => "ne",
+            "Norwegian - norsk" => "no",
+            "Norwegian Bokmål - norsk bokmål" => "nb",
+            "Norwegian Nynorsk - nynorsk" => "nn",
+            "Occitan" => "oc",
+            "Oriya - ଓଡ଼ିଆ" => "or",
+            "Oromo - Oromoo" => "om",
+            "Pashto - پښتو" => "ps",
+            "Persian - فارسی" => "fa",
+            "Polish - polski" => "pl",
+            "Portuguese - português" => "pt",
+            "Portuguese (Brazil - português (Brasil" => "pt-BR",
+            "Portuguese (Portugal - português (Portugal" => "pt-PT",
+            "Punjabi - ਪੰਜਾਬੀ" => "pa",
+            "Quechua" => "qu",
+            "Romanian - română" => "ro",
+            "Romanian (Moldova - română (Moldova" => "mo",
+            "Romansh - rumantsch" => "rm",
+            "Russian - русский" => "ru",
+            "Scottish Gaelic" => "gd",
+            "Serbian - српски" => "sr",
+            "Serbo - Croatian" => "sh",
+            "Shona - chiShona" => "sn",
+            "Sindhi" => "sd",
+            "Sinhala - සිංහල" => "si",
+            "Slovak - slovenčina" => "sk",
+            "Slovenian - slovenščina" => "sl",
+            "Somali - Soomaali" => "so",
+            "Southern Sotho" => "st",
+            "Spanish - español" => "es",
+            "Spanish (Argentina - español (Argentina" => "es-AR",
+            "Spanish (Latin America - español (Latinoamérica" => "es-419",
+            "Spanish (Mexico - español (México" => "es-MX",
+            "Spanish (Spain - español (España" => "es-ES",
+            "Spanish (United States - español (Estados Unidos" => "es-US",
+            "Sundanese" => "su",
+            "Swahili - Kiswahili" => "sw",
+            "Swedish - svenska" => "sv",
+            "Tajik - тоҷикӣ" => "tg",
+            "Tamil - தமிழ்" => "ta",
+            "Tatar" => "tt",
+            "Telugu - తెలుగు" => "te",
+            "Thai - ไทย" => "th",
+            "Tigrinya - ትግርኛ" => "ti",
+            "Tongan - lea fakatonga" => "to",
+            "Turkish - Türkçe" => "tr",
+            "Turkmen" => "tk",
+            "Twi" => "tw",
+            "Ukrainian - українська" => "uk",
+            "Urdu - اردو" => "ur",
+            "Uyghur" => "ug",
+            "Uzbek - o‘zbek" => "uz",
+            "Vietnamese - Tiếng Việt" => "vi",
+            "Walloon - wa" => "wa",
+            "Welsh - Cymraeg" => "cy",
+            "Western Frisian" => "fy",
+            "Xhosa" => "xh",
+            "Yiddish" => "yi",
+            "Yoruba - Èdè Yorùbá" => "yo",
+            "Zulu - isiZulu" => "zu"
+        ];
 
     }
 
@@ -305,6 +460,14 @@ class Mela_Simplebooking_Plugin_Config {
     public function load_plugin_settings() {
 
         $result = $this->plugin_settings;
+
+        return $result;
+
+    }
+
+    public function load_plugin_languages() {
+
+        $result = $this->languages;
 
         return $result;
 
