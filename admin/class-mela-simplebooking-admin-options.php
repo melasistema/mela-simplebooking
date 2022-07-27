@@ -111,7 +111,7 @@ class Mela_Simplebooking_Admin_Options  {
 		    add_settings_field(
 		    	
 		    	$setting,
-		    	__( $setting, 'mela-simplebooking' ),
+		    	__( $value['label'], 'mela-simplebooking' ),
 		    	array( $this, 'melasimplebooking_render_fields' ),
 		    	'melasimplebooking',
 		    	$section,
@@ -176,7 +176,7 @@ class Mela_Simplebooking_Admin_Options  {
 
 			case 'checkbox':?>
 
-				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo ( !empty( $options[$args['label_for']] ) && $options[$args['label_for']] == true) ? "checked" : ""; ?>><?php _e( $args['melasimplebooking_custom_data']['label'], 'mela-simplebooking' ); ?></input>
+				<input type="<?php echo esc_attr( $args['melasimplebooking_custom_data']['field_type'] ); ?>" id="<?php echo esc_attr( $args['label_for'] ); ?>" class="<?php echo !empty( $args['melasimplebooking_custom_data']['class'] ) ? $args['melasimplebooking_custom_data']['class'] : "";   ?>" name="melasimplebooking_options[<?php echo esc_attr( $args['label_for'] ); ?>]" <?php echo ( !empty( $options[$args['label_for']] ) && $options[$args['label_for']] == true) ? "checked" : ""; ?>><?php //_e( $args['melasimplebooking_custom_data']['description'], 'mela-simplebooking' ); ?></input>
 
 				<?php break;
 

@@ -29,3 +29,12 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+$option_name = 'melasimplebooking_options';
+$options = get_option( 'melasimplebooking_options' );
+
+if( !empty($options['melasimplebooking_delete_settings']) && $options['melasimplebooking_delete_settings'] == true ) {
+
+    delete_option( $option_name );
+
+}
