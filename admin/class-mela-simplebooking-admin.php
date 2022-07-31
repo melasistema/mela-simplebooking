@@ -147,14 +147,18 @@ class Mela_Simplebooking_Admin {
 		if( empty( $options['melasimplebooking_ida'] ) ) { ?>
 
 	        <div id="setting-error-melasimplebooking" class="notice notice-warning settings-error is-dismissible"> 
-	            <p><strong><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('Mela SimpleBooking require an IDA number to work!', 'mela-simplebooking'); ?></span>
+	            <p>
+	            	<strong>
+	            		<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('Mela simpleBooking require an IDA number to work properly!', 'mela-simplebooking'); ?></span>
+	            	</strong>
+	            </p>
 	        </div>
 		        
 		   <?php //return;
 		} ?>
 
 		<div id="shortcode-error-melasimplebooking" class="notice notice-warning settings-error is-dismissible"> 
-            <p><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('The Simplebooking form shortcode is avaiable in this version of the plugin. Use this shortcode in a page or post: ', 'mela-simplebooking'); ?><strong>[melasimplebooking-form]</strong></span>
+            <p><span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;"><?php _e('The Simplebooking form shortcode is avaiable in this version of the plugin. Use this shortcode in a page or post: ', 'mela-simplebooking'); ?><strong>[melasimplebooking-form]</strong></span></p>
         </div>
 	<?php }
 

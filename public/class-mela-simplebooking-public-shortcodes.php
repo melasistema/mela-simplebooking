@@ -65,14 +65,14 @@ class Mela_Simplebooking_Public_Shortcodes {
         $options = get_option( 'melasimplebooking_options' );
 
         // Manage the Simplebooking background_color
-        $background_color = '#0b2027';
+        $background_color = 'black';
         if ( isset( $options['melasimplebooking_background_color']) && $options['melasimplebooking_background_color'] != '' ) {
            $background_color = $options['melasimplebooking_background_color'];
         }
         
         // Shortcode atts
         $value = shortcode_atts( array(
-            'melasimplebooking_preventivo_id' => uniqid ( $prefix = "" ),
+            'melasimplebooking_request_id' => uniqid ( $prefix = "" ),
             'class' => 'melasimplebooking-sb-converto-wrapper',
         ), $atts );
 

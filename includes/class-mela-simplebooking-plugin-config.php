@@ -239,6 +239,13 @@ class Mela_Simplebooking_Plugin_Config {
                 'label' => __( 'Accent color', 'mela-simplebooking' ),
                 'description' => '',
             ),
+            'melasimplebooking_accent_color_hover' => array(
+                'field_type' => 'text',
+                'class' => 'color-field',
+                'section' => 'style_settings',
+                'label' => __( 'Accent color hover', 'mela-simplebooking' ),
+                'description' => '',
+            ),
             'melasimplebooking_field_background_color' => array(
                 'field_type' => 'text',
                 'class' => 'color-field',

@@ -1,5 +1,5 @@
 === simpleBooking - Wordpress Plugin  ===
-Contributors: Ugo Folletti, Riccardo Di Curti
+Contributors: Luca Visciola, Ugo Stona, Riccardo Di Curti
 Donate link: https://lucavisciola.com
 Tags: direct bookings, simplebooking, melasistema
 Requires at least: 5.5
@@ -32,7 +32,7 @@ Ordered list:
 
 A few notes about the sections above:
 
-*   "Contributors" Ugo Folletti, Riccardo Di Curti
+*   "Contributors" Luca Visciola, Ugo Stona, Riccardo Di Curti
 *   "Tags" booking engine, reservation system, travel, hotel, bed & breakfast, simpleBooking
 *   "Requires at least" 5.5
 *   "Tested up to" 6.0.1
@@ -50,7 +50,7 @@ A few notes about the sections above:
 
 = The plugin is free? How can i use the simpleBooking Booking Engine? =
 
-This plugin is free and is intendent for work Plug & Play with your wordpress reservation website and is multi-language compatible with WPML plugin out of the box, however it needs an ongoing plan with the booking engine suite `simpleBooking` --> https://www.simplebooking.travel
+This plugin is free and is intendent for making simpleBooking service work Plug & Play with your wordpress reservation website and it's multi-language, 100 compatible with WPML plugin out of the box, however it needs an ongoing plan with the booking engine suite `simpleBooking` --> https://www.simplebooking.travel
 
 == Screenshots ==
 
