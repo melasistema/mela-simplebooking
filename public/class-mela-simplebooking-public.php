@@ -127,7 +127,7 @@ class Mela_Simplebooking_Public {
 	        'melasimplebooking_icon_color' => !empty($options['melasimplebooking_icon_color']) ? $options['melasimplebooking_icon_color'] : "orange",
 	        'melasimplebooking_link_color' => !empty($options['melasimplebooking_link_color']) ? $options['melasimplebooking_link_color'] : "orange",
 	        'melasimplebooking_accent_color' => !empty($options['melasimplebooking_accent_color']) ? $options['melasimplebooking_accent_color'] : "orange",
-	        'melasimplebooking_accent_color' => !empty($options['melasimplebooking_accent_color_hover']) ? $options['melasimplebooking_accent_color_hover'] : "orange",
+	        'melasimplebooking_accent_color_hover' => !empty($options['melasimplebooking_accent_color_hover']) ? $options['melasimplebooking_accent_color_hover'] : "orange",
 	        'melasimplebooking_field_background_color' => !empty($options['melasimplebooking_field_background_color']) ? $options['melasimplebooking_field_background_color'] : "black",
 	        'melasimplebooking_selected_days_color' => !empty($options['melasimplebooking_selected_days_color']) ? $options['melasimplebooking_selected_days_color'] : "black",
 	        'melasimplebooking_calendar_background_color' => !empty($options['melasimplebooking_calendar_background_color']) ? $options['melasimplebooking_calendar_background_color'] : "black",
