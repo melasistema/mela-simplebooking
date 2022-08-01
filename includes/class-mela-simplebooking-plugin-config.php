@@ -417,8 +417,7 @@ class Mela_Simplebooking_Plugin_Config {
             "Yoruba - Èdè Yorùbá" => "yo",
             "Zulu - isiZulu" => "zu"
         ];
-
-        write_log($this->plugin_settings);
+        
 
     }
 
