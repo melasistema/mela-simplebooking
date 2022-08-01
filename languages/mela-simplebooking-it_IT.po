@@ -3,15 +3,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Mela simpleBooking 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mela-simplebooking\n"
-"Last-Translator: LUCA VISCIOLA <info@melasistema.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mela-"
+"simplebooking\n"
+"POT-Creation-Date: 2022-08-01T08:43:27+00:00\n"
+"PO-Revision-Date: 2022-08-01 11:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-01T08:43:27+00:00\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Domain: mela-simplebooking\n"
 
 #. Plugin Name of the plugin
@@ -25,6 +28,8 @@ msgstr ""
 #. Description of the plugin
 msgid "Setup simpleBooking mobile friendly bar and more"
 msgstr ""
+"Aumenta le prenotazioni dirette con la simpleBooking availability bar e "
+"molto altro"
 
 #. Author of the plugin
 msgid "Luca Visciola"
@@ -36,152 +41,167 @@ msgstr ""
 
 #: admin/class-mela-simplebooking-admin-options.php:276
 msgid "Settings Saved"
-msgstr ""
+msgstr "Impostazioni Salvate"
 
 #: admin/class-mela-simplebooking-admin.php:152
 msgid "Mela simpleBooking require an IDA number to work properly!"
 msgstr ""
+"Mela simpleBooking richiede il numero IDA della tua struttura per funzionare "
+"correttamente!"
 
 #: admin/class-mela-simplebooking-admin.php:161
-msgid "The Simplebooking form shortcode is avaiable in this version of the plugin. Use this shortcode in a page or post: "
+msgid ""
+"The Simplebooking form shortcode is avaiable in this version of the plugin. "
+"Use this shortcode in a page or post: "
 msgstr ""
+"Lo shortcode del modulo Simplebooking è disponibile in questa versione del "
+"plugin. Utilizzare questo shortcode in una pagina o in un post: "
 
 #: includes/class-mela-simplebooking-plugin-config.php:74
 msgid "simpleBooking IDA number"
-msgstr ""
+msgstr "Numero IDA simpleBooking"
 
 #: includes/class-mela-simplebooking-plugin-config.php:75
 msgid "Write here your simpleBooking IDA number"
 msgstr ""
+"Scrivi qui il tuo numero IDA della tua struttura rilasciato da simpleBooking"
 
 #: includes/class-mela-simplebooking-plugin-config.php:81
 msgid "Default language"
-msgstr ""
+msgstr "Lingua predefinita"
 
 #: includes/class-mela-simplebooking-plugin-config.php:82
-msgid "Choose the default language for simpleBooking. (Keep in mind that if you use WPML the language switching is automagic)"
+msgid ""
+"Choose the default language for simpleBooking. (Keep in mind that if you use "
+"WPML the language switching is automagic)"
 msgstr ""
+"Scegliere la lingua predefinita per simpleBooking. ( Con l’utilizzo di WPML "
+"il cambio di lingua è automatico )."
 
 #: includes/class-mela-simplebooking-plugin-config.php:83
 msgid "Select the default language"
-msgstr ""
+msgstr "Selezionare la lingua predefinita"
 
 #: includes/class-mela-simplebooking-plugin-config.php:90
 msgid "Hide on scroll"
-msgstr ""
+msgstr "Nascondere in caso di scorrimento"
 
 #: includes/class-mela-simplebooking-plugin-config.php:91
 msgid "Check this to auto-hide the bar on scroll for desktop devices"
 msgstr ""
+"Selezionare questa opzione per nascondere automaticamente la barra durante "
+"lo scorrimento per i dispositivi desktop"
 
 #: includes/class-mela-simplebooking-plugin-config.php:97
 msgid "Disable bar"
-msgstr ""
+msgstr "Disabilitare la barra"
 
 #: includes/class-mela-simplebooking-plugin-config.php:98
 msgid "Disable the simpleBooking in selected pages"
-msgstr ""
+msgstr "Disattivare la barra di simpleBooking nelle pagine selezionate"
 
 #: includes/class-mela-simplebooking-plugin-config.php:99
 msgid "Select one or more pages"
-msgstr ""
+msgstr "Seleziona una o più pagine"
 
 #: includes/class-mela-simplebooking-plugin-config.php:106
 msgid "Delete Settings"
-msgstr ""
+msgstr "Elimina le impostazioni"
 
 #: includes/class-mela-simplebooking-plugin-config.php:107
 msgid "Check this to delete all settings on plugin unistall"
 msgstr ""
+"Selezionare questa opzione per cancellare tutte le impostazioni alla "
+"disinstallazione del plugin"
 
 #: includes/class-mela-simplebooking-plugin-config.php:115
 msgid "Custom color"
-msgstr ""
+msgstr "Colore personalizzato"
 
 #: includes/class-mela-simplebooking-plugin-config.php:122
 msgid "Background color"
-msgstr ""
+msgstr "Colore dello sfondo"
 
 #: includes/class-mela-simplebooking-plugin-config.php:129
 msgid "Label color"
-msgstr ""
+msgstr "Colore delle etichette"
 
 #: includes/class-mela-simplebooking-plugin-config.php:136
 msgid "Label hover color"
-msgstr ""
+msgstr "Colore del passaggio del mouse sull’etichetta"
 
 #: includes/class-mela-simplebooking-plugin-config.php:143
 msgid "Widget color"
-msgstr ""
+msgstr "Colore del widget"
 
 #: includes/class-mela-simplebooking-plugin-config.php:150
 msgid "Widget background color"
-msgstr ""
+msgstr "Colore sfondo del widget"
 
 #: includes/class-mela-simplebooking-plugin-config.php:157
 msgid "Widget element hover color"
-msgstr ""
+msgstr "Colore dell’elemento widget al passaggio del mouse"
 
 #: includes/class-mela-simplebooking-plugin-config.php:164
 msgid "Widget element background color"
-msgstr ""
+msgstr "Colore dello sfondo dell’elemento del widget"
 
 #: includes/class-mela-simplebooking-plugin-config.php:171
 msgid "Box shadow color"
-msgstr ""
+msgstr "Colore dell’ombra"
 
 #: includes/class-mela-simplebooking-plugin-config.php:178
 msgid "Box shadow color hover"
-msgstr ""
+msgstr "Colore dell’ombra al passaggio del mouse"
 
 #: includes/class-mela-simplebooking-plugin-config.php:185
 msgid "Box shadow color focus"
-msgstr ""
+msgstr "Colore dell’ombra a fuoco"
 
 #: includes/class-mela-simplebooking-plugin-config.php:192
 msgid "Add room box shadow"
-msgstr ""
+msgstr "Colore ombra tasto aggiungi stanza"
 
 #: includes/class-mela-simplebooking-plugin-config.php:199
 msgid "Intent selection color"
-msgstr ""
+msgstr "Colore di selezione dell’intento"
 
 #: includes/class-mela-simplebooking-plugin-config.php:206
 msgid "Intent selection days background color"
-msgstr ""
+msgstr "Colore di sfondo dei giorni di selezione degli intenti"
 
 #: includes/class-mela-simplebooking-plugin-config.php:213
 msgid "Button background color"
-msgstr ""
+msgstr "Colore di sfondo del bottone"
 
 #: includes/class-mela-simplebooking-plugin-config.php:220
 msgid "Button hover background color"
-msgstr ""
+msgstr "Colore di sfondo del bottone al passaggio del mouse"
 
 #: includes/class-mela-simplebooking-plugin-config.php:227
 msgid "Icon color"
-msgstr ""
+msgstr "Colore icone"
 
 #: includes/class-mela-simplebooking-plugin-config.php:234
 msgid "Link color"
-msgstr ""
+msgstr "Colore link"
 
 #: includes/class-mela-simplebooking-plugin-config.php:241
 msgid "Accent color"
-msgstr ""
+msgstr "Colore di accento"
 
 #: includes/class-mela-simplebooking-plugin-config.php:248
 msgid "Accent color hover"
-msgstr ""
+msgstr "Colore di accento al passaggio del mouse"
 
 #: includes/class-mela-simplebooking-plugin-config.php:255
 msgid "Field background color"
-msgstr ""
+msgstr "Colore di sfondo dei campi"
 
 #: includes/class-mela-simplebooking-plugin-config.php:262
 msgid "Selected days color"
-msgstr ""
+msgstr "Colore dei giorni selezionati nel calendario"
 
 #: includes/class-mela-simplebooking-plugin-config.php:269
 msgid "Calendar background color"
-msgstr ""
+msgstr "Colore di sfondo del calendario"

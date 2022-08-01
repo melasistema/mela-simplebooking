@@ -62,6 +62,7 @@ class Mela_Simplebooking_Plugin_Config {
      */
     public function __construct() {
 
+
         $this->all_published_pages = $this->melasimplebooking_return_pages();
 
         $this->plugin_settings = [
@@ -80,6 +81,7 @@ class Mela_Simplebooking_Plugin_Config {
                 'section' => 'plugin_settings',
                 'label' => __( 'Default language', 'mela-simplebooking' ),
                 'description' => __( 'Choose the default language for simpleBooking. (Keep in mind that if you use WPML the language switching is automagic)', 'mela-simplebooking' ),
+                'select_placeholder' => __('Select the default language', 'mela-simplebooking'),
                 'select_options' => $this->languages,
             ),
             'melasimplebooking_hideonscroll' => array(
@@ -95,6 +97,7 @@ class Mela_Simplebooking_Plugin_Config {
                 'section' => 'plugin_settings',
                 'label' => __( 'Disable bar', 'mela-simplebooking' ),
                 'description' => __( 'Disable the simpleBooking in selected pages', 'mela-simplebooking' ),
+                'select_placeholder' => __('Select one or more pages', 'mela-simplebooking'),
                 'select_options' => $this->all_published_pages,
             ),
             'melasimplebooking_delete_settings' => array(
@@ -414,6 +417,8 @@ class Mela_Simplebooking_Plugin_Config {
             "Yoruba - Èdè Yorùbá" => "yo",
             "Zulu - isiZulu" => "zu"
         ];
+
+        write_log($this->plugin_settings);
 
     }
 

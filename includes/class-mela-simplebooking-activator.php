@@ -32,7 +32,7 @@ class Mela_Simplebooking_Activator {
 	public static function activate() {
 
         // Register CPT
-
+        //
         // Flush Permalink
         // flush_rewrite_rules();
 
